@@ -19,7 +19,6 @@ import Effects from './Effects'
 const isSmallScreen = typeof window !== 'undefined' && window.innerWidth < 768
 const MAX_DPR = Math.min(typeof window !== 'undefined' ? window.devicePixelRatio : 1, 1.75)
 
-/** Fog density follows the scroll timeline smoothly */
 function FogController() {
   useFrame(({ scene }) => {
     if (scene.fog) {
@@ -33,7 +32,6 @@ export default function Scene3D({ onReady }) {
   const [dpr, setDpr] = useState(MAX_DPR)
   const [quality, setQuality] = useState(isSmallScreen ? 'low' : 'high')
 
-  // Deep High-Contrast UK Agency Theme Fog Color
   const themeFogColor = COLORS?.fog || '#030712'
 
   return (
@@ -50,12 +48,10 @@ export default function Scene3D({ onReady }) {
         }}
         onCreated={() => onReady?.()}
       >
-        {/* High-Contrast Deep Dark Canvas Background */}
         <color attach="background" args={[themeFogColor]} />
         <fogExp2 attach="fog" args={[themeFogColor, sceneState.fx.fog || 0.005]} />
         <FogController />
 
-        {/* Performance Scaling */}
         <PerformanceMonitor
           flipflops={3}
           onIncline={() => {
@@ -72,11 +68,9 @@ export default function Scene3D({ onReady }) {
           }}
         />
 
-        {/* Camera and Dynamic Lighting */}
         <CameraRig />
         <Lighting />
 
-        {/* 3D Scene Components */}
         <Suspense fallback={null}>
           <Terrain />
           <Igloo />
