@@ -1,0 +1,98 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Unbounded', 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --animate-radar-ping: radar-ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+  --animate-eq: eq 0.9s ease-in-out infinite alternate;
+  --animate-loader: loader 1.1s ease-in-out infinite;
+  --animate-hud-in: hud-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  @keyframes radar-ping {
+    0% { transform: scale(0.15); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 0; }
+  }
+  @keyframes eq {
+    0% { height: 2px; }
+    100% { height: 12px; }
+  }
+  @keyframes loader {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(300%); }
+  }
+  @keyframes hud-in {
+    0% { opacity: 0; transform: translateY(6px); filter: blur(4px); }
+    100% { opacity: 1; transform: none; filter: none; }
+  }
+}
+
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+html {
+  background: #b3bbc3; /* matches scene fog so there is no flash before WebGL */
+}
+body {
+  margin: 0;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+::selection {
+  background: rgba(255, 255, 255, 0.35);
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow-x: hidden;
+  touch-action: pan-y;
+}
+
+.canvas-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.canvas-wrapper canvas {
+  pointer-events: auto;
+}
+
+html {
+  background: #0a0f1d;
+}
