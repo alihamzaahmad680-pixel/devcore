@@ -64,7 +64,6 @@ export default function Showcase({ particleCount }) {
         <meshBasicMaterial ref={rim} toneMapped={false} />
       </mesh>
 
-      {/* Inner Pedestal */}
       <mesh position-y={0.27}>
         <cylinderGeometry args={[1.15, 1.2, 0.24, isMobile ? 32 : 64]} />
         <meshStandardMaterial color="#c0d4e8" roughness={0.25} />
