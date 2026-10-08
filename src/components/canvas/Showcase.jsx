@@ -20,7 +20,7 @@ export default function Showcase({ particleCount }) {
   const responsiveScale = useMemo(() => {
     if (size.width < 480) return 0.72 
     if (size.width < 768) return 0.85 
-    return 1.0 // Desktop standard scale
+    return 1.0 
   }, [size.width])
 
   const effectiveParticleCount = useMemo(() => {
