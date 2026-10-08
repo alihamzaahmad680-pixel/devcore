@@ -40,7 +40,6 @@ export default function Showcase({ particleCount }) {
       halo.current.scale.setScalar((0.6 + s * 0.4) * (isMobile ? 0.85 : 1.0))
     }
 
-    // Smooth HDR bloom ramp without warm/yellow tinting
     if (rim.current) {
       rim.current.color.setRGB(0.5 + s * 1.8, 0.7 + s * 2.2, 1.0 + s * 2.5)
     }
