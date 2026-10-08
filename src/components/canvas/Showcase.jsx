@@ -47,13 +47,11 @@ export default function Showcase({ particleCount }) {
 
   return (
     <group ref={root} position={STAGE.position} scale={responsiveScale}>
-      {/* Base Stage Snow Cylinder */}
       <mesh receiveShadow>
         <cylinderGeometry args={[4.3, 4.6, 0.3, radialSegments]} />
         <meshStandardMaterial color={COLORS.snow || '#f2f7fa'} roughness={0.3} metalness={0.02} />
       </mesh>
 
-      {/* Concentric Decorative Rings */}
       {GROOVES.map((r) => (
         <mesh key={r} rotation-x={Math.PI / 2} position-y={0.155}>
           <torusGeometry args={[r, 0.035, 8, torusSegments]} />
@@ -61,7 +59,6 @@ export default function Showcase({ particleCount }) {
         </mesh>
       ))}
 
-      {/* Outer Glowing Rim */}
       <mesh rotation-x={Math.PI / 2} position-y={0.12}>
         <torusGeometry args={[4.35, 0.07, 10, torusSegments]} />
         <meshBasicMaterial ref={rim} toneMapped={false} />
