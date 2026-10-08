@@ -18,12 +18,11 @@ export default function Showcase({ particleCount }) {
   const torusSegments = isMobile ? 64 : 128
 
   const responsiveScale = useMemo(() => {
-    if (size.width < 480) return 0.72 // Compact mobile
-    if (size.width < 768) return 0.85 // Tablet / Large Mobile
+    if (size.width < 480) return 0.72 
+    if (size.width < 768) return 0.85 
     return 1.0 // Desktop standard scale
   }, [size.width])
 
-  // Adjust particle count for mobile GPUs if needed
   const effectiveParticleCount = useMemo(() => {
     return isMobile ? Math.floor(particleCount * 0.6) : particleCount
   }, [particleCount, isMobile])
