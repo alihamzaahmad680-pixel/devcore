@@ -69,7 +69,6 @@ export default function Showcase({ particleCount }) {
         <meshStandardMaterial color="#c0d4e8" roughness={0.25} />
       </mesh>
 
-      {/* Floating Overhead Halo */}
       <mesh ref={halo} rotation-x={Math.PI / 2} position-y={4.4}>
         <torusGeometry args={[1.8, 0.08, 12, torusSegments]} />
         <meshBasicMaterial color={[1.5, 2.2, 3.0]} toneMapped={false} />
