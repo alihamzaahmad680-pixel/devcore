@@ -74,7 +74,6 @@ export default function Showcase({ particleCount }) {
         <meshBasicMaterial color={[1.5, 2.2, 3.0]} toneMapped={false} />
       </mesh>
 
-      {/* Character Particle System */}
       <group position-y={0.39}>
         <ParticleCharacter count={effectiveParticleCount} />
       </group>
