@@ -44,11 +44,9 @@ export default function Lighting() {
       {/* Cool Rim Light for Frost Edges */}
       <directionalLight position={[5, 4, -9]} intensity={1.6} color="#dff6ff" />
 
-      {/* Dynamic Animated Lights */}
       <pointLight ref={white} color={COLORS.glow} intensity={6} distance={12} decay={2} />
       <pointLight ref={cyan} color={COLORS.cyan} intensity={5} distance={10} decay={2} />
 
-      {/* Portal core + showcase key light */}
       <pointLight position={PORTAL.position} color={COLORS.glow} intensity={30} distance={14} decay={2} />
       <pointLight
         position={[STAGE.position[0] + 2, STAGE.position[1] + 6, STAGE.position[2] + 3]}
