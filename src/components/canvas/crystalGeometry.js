@@ -25,7 +25,6 @@ export function createShardGeometry(seed) {
   return geometry
 }
 
-/** Random "data network" around a crystal: line segments + node points. */
 export function createPlexus(seed, nodes = 22) {
   const rand = createRng(seed)
   const points = []
