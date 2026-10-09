@@ -22,11 +22,9 @@ export default function Lighting() {
 
   return (
     <>
-      {/* Cool Sky & Ice Ground Ambient Fill (Eliminates Muddy Yellow Reflections) */}
       <hemisphereLight args={['#ffffff', '#b0bec5', 1.35]} />
       <ambientLight intensity={0.25} color="#e3f2fd" />
 
-      {/* Main Arctic Sun Key Light */}
       <directionalLight
         castShadow
         position={[-6, 12, 7]}
