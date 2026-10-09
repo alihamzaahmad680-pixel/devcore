@@ -41,7 +41,6 @@ export default function Lighting() {
         shadow-normalBias={0.02}
       />
 
-      {/* Cool Rim Light for Frost Edges */}
       <directionalLight position={[5, 4, -9]} intensity={1.6} color="#dff6ff" />
 
       <pointLight ref={white} color={COLORS.glow} intensity={6} distance={12} decay={2} />
