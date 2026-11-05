@@ -26,7 +26,13 @@ export function createShardGeometry(seed) {
 }
 
 export function createPlexus(seed, nodes = 22) {
-  co
+  const rand = createRng(seed)
+  const points = []
+  for (let i = 0; i < nodes; i++) {
+    const dir = new THREE.Vector3(rand() - 0.5, (rand() - 0.5) * 1.4, rand() - 0.5).normalize()
+    points.push(dir.multiplyScalar(1.3 + rand() * 1.6))
+  }
+
   const segments = []
   for (let i = 0; i < nodes; i++) {
     for (let j = i + 1; j < nodes; j++) {
